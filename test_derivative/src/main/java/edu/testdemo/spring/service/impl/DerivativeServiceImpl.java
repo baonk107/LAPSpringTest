@@ -78,7 +78,6 @@ public class DerivativeServiceImpl implements DerivativeService {
             for (Derivative derivative : pagedResult) {
                 derivativeDTOS.add(DerivativeMapper.toDeriDTO(derivative));
             }
-//            System.out.println("List: " + derivativeDTOS);
 
             //Find Total Page and Page Element
             List<Derivative> derivativeListByCode = derivativeRepository.findAll();
@@ -88,7 +87,6 @@ public class DerivativeServiceImpl implements DerivativeService {
             if (totalElements % size_of_page != 0) {
                 totalPages += 1;
             }
-//            System.out.println("Total Page: " + totalPages);
 
             Paging pagings = Paging.builder()
                     .data(derivativeDTOS)
@@ -132,12 +130,10 @@ public class DerivativeServiceImpl implements DerivativeService {
             //Find Total Page and Page Element
             List<Derivative> derivativeListByCode = derivativeRepository.findAllById(codes);
             int totalElements = derivativeListByCode.size();
-//            System.out.println("Total E: " + totalElements);
             int totalPages = totalElements / size_of_page;
             if (totalElements % size_of_page != 0) {
                 totalPages += 1;
             }
-//            System.out.println("Total Page: " + totalPages);
 
             Paging pagings = Paging.builder()
                     .data(derivativeDTOS)

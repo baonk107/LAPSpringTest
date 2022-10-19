@@ -30,7 +30,7 @@ public class DerivativeController {
                                       @RequestParam(name = "sort", required = false) String sort,
                                       @RequestParam(name = "size", required = false) String size) {
 
-        //Xử Lý page là chữ, < 0, size là chữ, size < 0 sau :v
+        //Xử Lý page là chữ, < 0, size là chữ, size < 0 để tạm xử lý ngoại lệ sau ạ :v
         if (page == null || page.isEmpty()) {
             page = "1"; //Default = 1
         }
